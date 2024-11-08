@@ -1,5 +1,23 @@
 function game(){
+    numbers()
+    document.getElementById('User_invert1').value = "";
+    document.getElementById('User_invert2').value = "";
+    document.getElementById('User_invert3').value = "";
+    document.getElementById('User_invert4').value = "";
+    document.getElementById('User_invert5').value = "";
+    document.getElementById('User_invert6').value = "";
+    document.getElementById('User_invert7').value = "";
+    document.getElementById('User_invert8').value = "";
+    document.getElementById('User_answer1').value = "";
+    document.getElementById('User_answer2').value = "";
+    document.getElementById('User_answer3').value = "";
+    document.getElementById('User_answer4').value = "";
+    document.getElementById('User_answer5').value = "";
+    document.getElementById('User_answer6').value = "";
+    document.getElementById('User_answer7').value = "";
+    document.getElementById('User_answer8').value = "";
 
+    subtraction()
 }
 var binary;
 var binary2;
@@ -70,6 +88,7 @@ function numbers(){
     document.getElementById('binary2_number8').innerText = digit8
     //document.getElementById('binarynumber1').innerText = "Binary 1: "+ binary;
     //document.getElementById('binarynumber2').innerText = "Binary 2: "+ binary2;
+    
 }
 var final = "";
 var answerdenary1 = 0;
@@ -114,65 +133,67 @@ function subtraction(){
 
     // number 1 ------------------------------------------
     if (digit11 == 1){
-        denary2 = denary2 + 128;
+        denary1 = denary1 + 128;
     }
     if (digit22 == 1){
-        denary2 = denary2 + 64;
+        denary1 = denary1 + 64;
     }
     if (digit33 == 1){
-        denary2 = denary2 + 32;
+        denary1 = denary1 + 32;
     }
     if (digit44 == 1){
-        denary2 = denary2 + 16;
+        denary1 = denary1 + 16;
     }
     if (digit55 == 1){
-        denary2 = denary2 + 8;
+        denary1 = denary1 + 8;
     }
     if (digit66 == 1){
-        denary2 = denary2 + 4;
+        denary1 = denary1 + 4;
     }
     if (digit77 == 1){
-        denary2 = denary2 + 2;
+        denary1 = denary1 + 2;
     }
     if (digit88 == 1){
-        denary2 = denary2 + 1;
+        denary1 = denary1 + 1;
     }
-    let answerdenary1 = denary2;
+    let answerdenary1 = denary1;
 
     // number 2 ------------------------------------------------
     if (digit1 == 1){
-        denary1 = denary1 + 128;
+        denary2 = denary2 + 128;
     }
     if (digit2 == 1){
-        denary1 = denary1 + 64;
+        denary2 = denary2 + 64;
     }
     if (digit3 == 1){
-        denary1 = denary1 + 32;
+        denary2 = denary2 + 32;
     }
     if (digit4 == 1){
-        denary1 = denary1 + 16;
+        denary2 = denary2 + 16;
     }
     if (digit5 == 1){
-        denary1 = denary1 + 8;
+        denary2 = denary2 + 8;
     }
     if (digit6 == 1){
-        denary1 = denary1 + 4;
+        denary2 = denary2 + 4;
     }
     if (digit7 == 1){
-        denary1 = denary1 + 2;
+        denary2 = denary2 + 2;
     }
     if (digit8 == 1){
-        denary1 = denary1 + 1;
+        denary2 = denary2 + 1;
     }
-    let answerdenary2 = denary1;
+    let answerdenary2 = denary2 ;
 
-    denary3 = denary2 - denary1;
+    denary2 = denary2*-1;
+
+    denary3 = denary1 + denary2;
 
     let totaldenary = denary3;
     window.totaldenary = totaldenary;
     window.answerdenary1 = answerdenary1;
     window.answerdenary2 = answerdenary2;
-    alert('Denary1: '+answerdenary1+ " Denary2: "+answerdenary2+" Denary3: "+totaldenary);
+    //alert('Denary1: '+answerdenary1+ " Denary2: "+answerdenary2+" Denary3: "+totaldenary);
     
     if (denary3 < 0){
         let number = denary3 *-1;
@@ -229,7 +250,7 @@ function subtraction(){
             answer = answer += "0".toString()
         };
 
-        // alert(answer);
+         //alert(answer);
         
         for (let i = 0; i < answer.length; i++){
             if (answer[i] == 0){
@@ -239,10 +260,9 @@ function subtraction(){
                 binary = binary += "0".toString();
             };
         };
-        //alert(binary);
         let sum = (parseInt(binary, 2) + parseInt(plus1, 2)).toString(2);
         let final = sum;
-        alert(final);
+        //alert(final);
 
 
     } else if (denary3 >= 0 ){
@@ -298,7 +318,7 @@ function subtraction(){
         if (denary3 >=1){
             alert("Error! Binary leftover "+ denary3);
         };
-        alert(final);
+        //alert(final);
         window.final = final;
         check();
 
@@ -307,6 +327,15 @@ function subtraction(){
     };
 
 }  
+User_invert1 = document.getElementById('User_invert1').innerText
+User_invert2 = document.getElementById('User_invert2').innerText
+User_invert3 = document.getElementById('User_invert3').innerText
+User_invert4 = document.getElementById('User_invert4').innerText
+User_invert5 = document.getElementById('User_invert5').innerText
+User_invert6 = document.getElementById('User_invert6').innerText
+User_invert7 = document.getElementById('User_invert7').innerText
+User_invert8 = document.getElementById('User_invert8').innerText
+
 User_answer1 = document.getElementById('User_answer1').innerText
 User_answer2 = document.getElementById('User_answer2').innerText
 User_answer3 = document.getElementById('User_answer3').innerText
@@ -315,14 +344,25 @@ User_answer5 = document.getElementById('User_answer5').innerText
 User_answer6 = document.getElementById('User_answer6').innerText
 User_answer7 = document.getElementById('User_answer7').innerText
 User_answer8 = document.getElementById('User_answer8').innerText
+
+
 function check(){
-    //alert("Value of final " + final);
-    //alert("Value of answerdenary1 " + answerdenary1);
-    //alert("Value of answerdenary2 " + answerdenary2);
-    //alert("Value of totaldenary " + totaldenary);
-    if (final == User_answer1){
+    let final1 = final[0];
+    let final2 = final[1];
+    let final3 = final[2];
+    let final4 = final[3];
+    let final5 = final[4];
+    let final6 = final[5];
+    let final7 = final[6];
+    let final8 = final[7];
+    alert("Binary2 " + binary2);
+    alert("Value of final " + final);
+    alert("Value of answerdenary1 " + answerdenary1);
+    alert("Value of answerdenary2 " + answerdenary2);
+    alert("Value of totaldenary " + totaldenary);
+    ///if ( == User_invert1){
         
-    };
+    //};
 
 
 
