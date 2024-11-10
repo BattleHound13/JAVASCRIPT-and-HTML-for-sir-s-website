@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Binary Test</title>
+    <title>Binary Subtraction</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -9,12 +9,13 @@
             margin-top: 50px;
         }
         .binary-display {
-            width: 20px;
-            font-size: 32px;
+            
+            font-size: 36px;
         }
         .input-field{
 		    width: 20px;
 		    font-size: 32px;
+            
 	    }
         .binary-numbers {
             width: 20px;
@@ -27,14 +28,11 @@
     </style>
 </head>
 <body>
-    <h1>Binary Numbers Generator</h1>
-    <button onclick="numbers()">Generate Binary Numbers</button>
-    <div class="binary-display" id="binarynumber1"></div>
-    <div class="binary-display" id="binarynumber2"></div>
-    <button onclick="subtraction()">Subtraction</button>
-    <div class="binary-display" id="test4"></div>
+    <h1>Binary Subtraction</h1>
+    
 
     <div class="binary-numbers"></div>
+    
     <div class="binary-numbers" id="binary1_number1"></div>
     <div class="binary-numbers" id="binary1_number2"></div>
     <div class="binary-numbers" id="binary1_number3"></div>
@@ -43,8 +41,11 @@
     <div class="binary-numbers" id="binary1_number6"></div>
     <div class="binary-numbers" id="binary1_number7"></div>
     <div class="binary-numbers" id="binary1_number8"></div>
+    
     <br>
-    <div class="binary-numbers"></div>
+
+    <div class="binary-numbers"id="symbol1">-</div>
+     
     <div class="binary-numbers" id="binary2_number1"></div>
     <div class="binary-numbers" id="binary2_number2"></div>
     <div class="binary-numbers" id="binary2_number3"></div>
@@ -55,21 +56,25 @@
     <div class="binary-numbers" id="binary2_number8"></div>
     
     <br>
-    <div class="binary-numbers">+</div>
-    <input type="text" maxlength="1" class = "input-field" id="User_invert1"  style="background-color: white;">
-    <input type="text" maxlength="1" class = "input-field" id="User_invert2"  style="background-color: white;">
-    <input type="text" maxlength="1" class = "input-field" id="User_invert3"  style="background-color: white;">
-    <input type="text" maxlength="1" class = "input-field" id="User_invert4"  style="background-color: white;">
-    <input type="text" maxlength="1" class = "input-field" id="User_invert5"  style="background-color: white;">
-    <input type="text" maxlength="1" class = "input-field" id="User_invert6"  style="background-color: white;">
-    <input type="text" maxlength="1" class = "input-field" id="User_invert7"  style="background-color: white;">
-    <input type="text" maxlength="1" class = "input-field" id="User_invert8"  style="background-color: white;">
+    <div class="binary-numbers" id="symbol2" style="color: #A9A9A9;">+</div>
     
-    <br>
-    <div class="binary-display">─────────</div>
-    <br>
+    <input type="text" maxlength="1" class = "input-field" id="User_invert1" oninput="checkAndChangeColor()" style="background-color: white;">
+    <input type="text" maxlength="1" class = "input-field" id="User_invert2" oninput="checkAndChangeColor()" style="background-color: white;">
+    <input type="text" maxlength="1" class = "input-field" id="User_invert3" oninput="checkAndChangeColor()" style="background-color: white;">
+    <input type="text" maxlength="1" class = "input-field" id="User_invert4" oninput="checkAndChangeColor()" style="background-color: white;">
+    <input type="text" maxlength="1" class = "input-field" id="User_invert5" oninput="checkAndChangeColor()" style="background-color: white;">
+    <input type="text" maxlength="1" class = "input-field" id="User_invert6" oninput="checkAndChangeColor()" style="background-color: white;">
+    <input type="text" maxlength="1" class = "input-field" id="User_invert7" oninput="checkAndChangeColor()" style="background-color: white;">
+    <input type="text" maxlength="1" class = "input-field" id="User_invert8" oninput="checkAndChangeColor()" style="background-color: white;">
     
-    <div class="binary-numbers"></div>
+
+    <div class="binary-display">────────────</div>
+    
+    
+    
+    
+    
+    <input type="text" maxlength="1" class = "input-field" id="User_answer0"  style="background-color: white;">
     <input type="text" maxlength="1" class = "input-field" id="User_answer1"  style="background-color: white;">
     <input type="text" maxlength="1" class = "input-field" id="User_answer2"  style="background-color: white;">
     <input type="text" maxlength="1" class = "input-field" id="User_answer3"  style="background-color: white;">
@@ -79,8 +84,12 @@
     <input type="text" maxlength="1" class = "input-field" id="User_answer7"  style="background-color: white;">
     <input type="text" maxlength="1" class = "input-field" id="User_answer8"  style="background-color: white;">
     
-    
+    <br>
+    <br>
+    <button onclick="game()">Next Numbers</button>
+    <button onclick="check()">Submit</button>
     <!-- Link to the external JavaScript file -->
-    <script src="test.js"></script>
+    <script src="test2.js"></script>
+
 </body>
 </html>
