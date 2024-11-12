@@ -1,4 +1,5 @@
 function game(){
+    checkAndChangeColor()
     numbers()
     document.getElementById('User_invert1').value = "";
     document.getElementById('User_invert2').value = "";
@@ -460,163 +461,173 @@ function subtraction(){
     };
     //alert('answer '+answer);
     window.answer = answer;
-    // adds the invert binary2 with binary1 ------------------------------------------
+    // Parse the digits from the binary strings
+// Parse the digits from the binary strings
+digit1 = parseInt(binary[0]);
+digit2 = parseInt(binary[1]);
+digit3 = parseInt(binary[2]);
+digit4 = parseInt(binary[3]);
+digit5 = parseInt(binary[4]);
+digit6 = parseInt(binary[5]);
+digit7 = parseInt(binary[6]);
+digit8 = parseInt(binary[7]);
 
-    digit1 = parseInt(binary[0]);
-    digit2 = parseInt(binary[1]);
-    digit3 = parseInt(binary[2]);
-    digit4 = parseInt(binary[3]);
-    digit5 = parseInt(binary[4]);
-    digit6 = parseInt(binary[5]);
-    digit7 = parseInt(binary[6]);
-    digit8 = parseInt(binary[7]);
+digit11 = parseInt(answer[0]);
+digit22 = parseInt(answer[1]);
+digit33 = parseInt(answer[2]);
+digit44 = parseInt(answer[3]);
+digit55 = parseInt(answer[4]);
+digit66 = parseInt(answer[5]);
+digit77 = parseInt(answer[6]);
+digit88 = parseInt(answer[7]);
 
-    digit11 = parseInt(answer[0]);
-    digit22 = parseInt(answer[1]);
-    digit33 = parseInt(answer[2]);
-    digit44 = parseInt(answer[3]);
-    digit55 = parseInt(answer[4]);
-    digit66 = parseInt(answer[5]);
-    digit77 = parseInt(answer[6]);
-    digit88 = parseInt(answer[7]);
 
-    let answer0 = "";
-    let answer1 = "";
-    let answer2 = "";
-    let answer3 = "";
-    let answer4 = "";
-    let answer5 = "";
-    let answer6 = "";
-    let answer7 = "";
-    let answer8 = "";
+window.digit11 = digit11
+window.digit22 = digit22
+window.digit33 = digit33
+window.digit44 = digit44
+window.digit55 = digit55
+window.digit66 = digit66
+window.digit77 = digit77
+window.digit88 = digit88
+// Initialize answer variables
+let answer0 = "0";
+let answer1 = "";
+let answer2 = "";
+let answer3 = "";
+let answer4 = "";
+let answer5 = "";
+let answer6 = "";
+let answer7 = "";
+let answer8 = "";
+let carry = 0;
+
+// Column 1 (least significant bit) ---------------------------------------
+if (digit8 + digit88 + carry == 0){
+    answer8 += "0";
+    carry = 0;
+} else if(digit8 + digit88 + carry == 1){
+    answer8 += "1";
+    carry = 0;
+} else if(digit8 + digit88 + carry == 2){
+    answer8 += "0";
+    carry = 1;
+} else if(digit8 + digit88 + carry == 3){
+    answer8 += "1";
+    carry = 1;
+}
+
+// Column 2 ---------------------------------------------------------------
+if (digit7 + digit77 + carry == 0){
+    answer7 += "0";
+    carry = 0;
+} else if(digit7 + digit77 + carry == 1){
+    answer7 += "1";
+    carry = 0;
+} else if(digit7 + digit77 + carry == 2){
+    answer7 += "0";
+    carry = 1;
+} else if(digit7 + digit77 + carry == 3){
+    answer7 += "1";
+    carry = 1;
+}
+
+// Column 3 ---------------------------------------------------------------
+if (digit6 + digit66 + carry == 0){
+    answer6 += "0";
+    carry = 0;
+} else if(digit6 + digit66 + carry == 1){
+    answer6 += "1";
+    carry = 0;
+} else if(digit6 + digit66 + carry == 2){
+    answer6 += "0";
+    carry = 1;
+} else if(digit6 + digit66 + carry == 3){
+    answer6 += "1";
+    carry = 1;
+}
+
+// Column 4 ---------------------------------------------------------------
+if (digit5 + digit55 + carry == 0){
+    answer5 += "0";
+    carry = 0;
+} else if(digit5 + digit55 + carry == 1){
+    answer5 += "1";
+    carry = 0;
+} else if(digit5 + digit55 + carry == 2){
+    answer5 += "0";
+    carry = 1;
+} else if(digit5 + digit55 + carry == 3){
+    answer5 += "1";
+    carry = 1;
+}
+
+// Column 5 ---------------------------------------------------------------
+if (digit4 + digit44 + carry == 0){
+    answer4 += "0";
+    carry = 0;
+} else if(digit4 + digit44 + carry == 1){
+    answer4 += "1";
+    carry = 0;
+} else if(digit4 + digit44 + carry == 2){
+    answer4 += "0";
+    carry = 1;
+} else if(digit4 + digit44 + carry == 3){
+    answer4 += "1";
+    carry = 1;
+}
+
+// Column 6 ---------------------------------------------------------------
+if (digit3 + digit33 + carry == 0){
+    answer3 += "0";
+    carry = 0;
+} else if(digit3 + digit33 + carry == 1){
+    answer3 += "1";
+    carry = 0;
+} else if(digit3 + digit33 + carry == 2){
+    answer3 += "0";
+    carry = 1;
+} else if(digit3 + digit33 + carry == 3){
+    answer3 += "1";
+    carry = 1;
+}
+
+// Column 7 ---------------------------------------------------------------
+if (digit2 + digit22 + carry == 0){
+    answer2 += "0";
+    carry = 0;
+} else if(digit2 + digit22 + carry == 1){
+    answer2 += "1";
+    carry = 0;
+} else if(digit2 + digit22 + carry == 2){
+    answer2 += "0";
+    carry = 1;
+} else if(digit2 + digit22 + carry == 3){
+    answer2 += "1";
+    carry = 1;
+}
+
+// Column 8 (most significant bit) ---------------------------------------
+if (digit1 + digit11 + carry == 0){
+    answer1 += "0";
+    answer0 += "0";
+} else if(digit1 + digit11 + carry == 1){
+    answer1 += "1";
+    answer0 += "0";
+} else if(digit1 + digit11 + carry == 2){
+    answer1 += "0";
+    answer0 += "1";
+} else if(digit1 + digit11 + carry == 3){
+    answer1 += "1";
+    answer0 += "1";
+}
+
+
+
     
-//column 1 -------------------------------------------------------
-    if (digit8 + digit88 == 0){
-        answer8 = answer8 + "0".toString()
-        
-    }
-    else if(digit8 + digit88 == 1){
-        answer8 = answer8 + "1".toString()
-    }
-    else if(digit8 + digit88 == 2){
-        answer8 = answer8 + "0".toString()
-        digit7 = digit7 +1
-    }
-    else if(digit8 + digit88 == 3){
-        answer8 = answer8 + "1".toString()
-        digit7 = digit7 +1
-    };
-//column 2 -------------------------------------------------------
-    if (digit7 + digit77 == 0){
-        answer7 = answer7 + "0".toString()
-    }
-    else if(digit7 + digit77 == 1){
-        answer7 = answer7 + "1".toString()
-    }
-    else if(digit7 + digit77 == 2){
-        answer7 = answer7 + "0".toString()
-        digit6 = digit6 +1
-    }
-    else if(digit7 + digit77 == 3){
-        answer7 = answer7 + "1".toString()
-        digit6 = digit6 +1
-    };
-//column 3 -------------------------------------------------------
-    if (digit6 + digit66 == 0){
-        answer6 = answer6 + "0".toString()
-    }
-    else if(digit6 + digit66 == 1){
-        answer6 = answer6 + "1".toString()
-    }
-    else if(digit6 + digit66 == 2){
-        answer6 = answer6 + "0".toString()
-        digit5 = digit5 +1
-    }
-    else if(digit6 + digit66 == 3){
-        answer6 = answer6 + "1".toString()
-        digit5 = digit5 +1
-    };
-//column 4 -------------------------------------------------------
-    if (digit5 + digit55 == 0){
-        answer5 = answer5 + "0".toString()
-    }
-    else if(digit5 + digit55 == 1){
-        answer5 = answer5 + "1".toString()
-    }
-    else if(digit5 + digit55 == 2){
-        answer5 = answer5 + "0".toString()
-        digit4 = digit4 +1
-    }
-    else if(digit5 + digit55 == 3){
-        answer5 = answer5 + "1".toString()
-        digit4 = digit4 +1
-    };
-//column 5 -------------------------------------------------------
-    if (digit4 + digit44 == 0){
-        answer4 = answer4 + "0".toString()
-    }
-    else if(digit4 + digit44 == 1){
-        answer4 = answer4 + "1".toString()
-    }
-    else if(digit4 + digit44 == 2){
-        answer4 = answer4 + "0".toString()
-        digit3 = digit3 +1
-    }
-    else if(digit4 + digit44 == 3){
-        answer4 = answer4 + "1".toString()
-        digit3 = digit3 +1
-    };
-//column 6 -------------------------------------------------------
-    if (digit3 + digit33 == 0){
-        answer3 = answer3 + "0".toString()
-    }
-    else if(digit3 + digit33 == 1){
-        answer3 = answer3 + "1".toString()
-    }
-    else if(digit3 + digit33 == 2){
-        answer3 = answer3 + "0".toString()
-        digit2 = digit2 +1
-    }
-    else if(digit3 + digit33 == 3){
-        answer3 = answer3 + "1".toString()
-        digit2 = digit2 +1
-    };
-//column 7 -------------------------------------------------------
-    if (digit2 + digit22 == 0){
-        answer2 = answer2 + "0".toString()
-    }
-    else if(digit2 + digit22 == 1){
-        answer2 = answer2 + "1".toString()
-    }
-    else if(digit2 + digit22 == 2){
-        answer2 = answer2 + "0".toString()
-        digit1 = digit1 +1
-    }
-    else if(digit2 + digit22 == 3){
-        answer2 = answer2 + "1".toString()
-        digit1 = digit1 +1
-    };
-//column 8 -------------------------------------------------------
-    if (digit1 + digit11 == 0){
-        answer1 = answer1 + "0".toString()
-        answer0 = answer0 + "0".toString()
-    }
-    else if(digit1 + digit11 == 1){
-        answer1 = answer1 + "1".toString()
-        answer0 = answer0 + "0".toString()
-    }
-    else if(digit1 + digit11 == 2){
-        answer1 = answer1 + "0".toString()
-        answer0 = answer0 + "1".toString()
-    }
-    else if(digit1 + digit11 == 3){
-        answer1 = answer1 + "1".toString()
-        answer0 = answer0 + "1".toString()
-    };
+
+
     
-
-
-    console.log("ANSWER0: "+answer0);
     console.log("ANSWER1: "+answer1);
     console.log("ANSWER2: "+answer2);
     console.log("ANSWER3: "+answer3);
@@ -626,7 +637,6 @@ function subtraction(){
     console.log("ANSWER7: "+answer7);
     console.log("ANSWER8: "+answer8);
     let total = "";
-    total = total + answer0.toString();
     total = total + answer1.toString();
     total = total + answer2.toString();
     total = total + answer3.toString();
@@ -643,34 +653,49 @@ function subtraction(){
 
 
 };  
-User_invert1 = document.getElementById('User_invert1').innerText
-User_invert2 = document.getElementById('User_invert2').innerText
-User_invert3 = document.getElementById('User_invert3').innerText
-User_invert4 = document.getElementById('User_invert4').innerText
-User_invert5 = document.getElementById('User_invert5').innerText
-User_invert6 = document.getElementById('User_invert6').innerText
-User_invert7 = document.getElementById('User_invert7').innerText
-User_invert8 = document.getElementById('User_invert8').innerText
 
-User_answer1 = document.getElementById('User_answer1').innerText
-User_answer2 = document.getElementById('User_answer2').innerText
-User_answer3 = document.getElementById('User_answer3').innerText
-User_answer4 = document.getElementById('User_answer4').innerText
-User_answer5 = document.getElementById('User_answer5').innerText
-User_answer6 = document.getElementById('User_answer6').innerText
-User_answer7 = document.getElementById('User_answer7').innerText
-User_answer8 = document.getElementById('User_answer8').innerText
+function totaluseranswer(){
+    let totaluseranswer = "";
+    totaluseranswer += document.getElementById('User_answer1').value;
+    totaluseranswer += document.getElementById('User_answer2').value;
+    totaluseranswer += document.getElementById('User_answer3').value;
+    totaluseranswer += document.getElementById('User_answer4').value;
+    totaluseranswer += document.getElementById('User_answer5').value;
+    totaluseranswer += document.getElementById('User_answer6').value;
+    totaluseranswer += document.getElementById('User_answer7').value;
+    totaluseranswer += document.getElementById('User_answer8').value;
+    return totaluseranswer; // Return the concatenated result
+};
+
+
+function totaluserinvert() {
+    let totaluserinvert = "";
+    totaluserinvert += document.getElementById('User_invert1').value;
+    totaluserinvert += document.getElementById('User_invert2').value;
+    totaluserinvert += document.getElementById('User_invert3').value;
+    totaluserinvert += document.getElementById('User_invert4').value;
+    totaluserinvert += document.getElementById('User_invert5').value;
+    totaluserinvert += document.getElementById('User_invert6').value;
+    totaluserinvert += document.getElementById('User_invert7').value;
+    totaluserinvert += document.getElementById('User_invert8').value;
+    return totaluserinvert; // Return the concatenated result
+}
+
 
 
 function check(){
-  if (User_invert1 == answer[0] && User_invert2 == answer[1] && User_invert3 == answer[2] && User_invert4 == answer[3] && User_invert5 == answer[4] && User_invert6 == answer[5] && User_invert7 == answer[6] &&User_invert8 == answer[7] ){
+  let userinvert = totaluserinvert();
+  let useranswer = totaluseranswer();
+
+  //alert("USER ANSWER " + totaluseranswer2)
+  if (userinvert == answer){
     alert("Correct inversion")
   }else {
     alert("Incorrect inversion! Correct value: "+answer);
   };
 
 
-  if (User_answer1 == answer0 && User_answer1 == answer1 && User_answer2 == answer2&& User_answer3 == answer3&& User_answer4 == answer4 && User_answer5 == answer5 && User_answer6 == answer6 && User_answer7 == answer7  && User_answer8 == answer8 ){
+  if (useranswer == total){
     alert("Correct total")
   }else{
     alert("Incorrect total! Correct value: "+total);
@@ -679,7 +704,7 @@ function check(){
 
 
 };
-window.onload = game;
+
 function checkAndChangeColor() {
     // Get the input elements
     let input1 = document.getElementById('User_invert1');
@@ -732,5 +757,5 @@ function checkAndChangeColor() {
         output10.style.color = '#A9A9A9';
     }
 }
-
+window.onload = game;
 
