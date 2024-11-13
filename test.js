@@ -1,5 +1,4 @@
 function game(){
-    checkAndChangeColor()
     numbers()
     document.getElementById('User_invert1').value = "";
     document.getElementById('User_invert2').value = "";
@@ -19,6 +18,7 @@ function game(){
     document.getElementById('User_answer8').value = "";
 
     subtraction()
+    checkAndChangeColor()
 }
 var binary = "";
 var binary2 = "";
