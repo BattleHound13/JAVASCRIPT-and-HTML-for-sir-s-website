@@ -19,6 +19,40 @@ function game(){
 
     subtraction()
     checkAndChangeColor()
+    let box1 = document.getElementById('User_invert1');
+    let box2 = document.getElementById('User_invert2');
+    let box3 = document.getElementById('User_invert3');
+    let box4 = document.getElementById('User_invert4');
+    let box5 = document.getElementById('User_invert5');
+    let box6 = document.getElementById('User_invert6');
+    let box7 = document.getElementById('User_invert7');
+    let box8 = document.getElementById('User_invert8');
+
+    let box9 = document.getElementById('User_answer1');
+    let box10 = document.getElementById('User_answer2');
+    let box11 = document.getElementById('User_answer3');
+    let box12 = document.getElementById('User_answer4');
+    let box13 = document.getElementById('User_answer5');
+    let box14 = document.getElementById('User_answer6');
+    let box15 = document.getElementById('User_answer7');
+    let box16 = document.getElementById('User_answer8');
+
+    box1.style.backgroundColor = "";
+    box2.style.backgroundColor = "";
+    box3.style.backgroundColor = "";
+    box4.style.backgroundColor = "";
+    box5.style.backgroundColor = "";
+    box6.style.backgroundColor = "";
+    box7.style.backgroundColor = "";
+    box8.style.backgroundColor = "";
+    box9.style.backgroundColor = "";
+    box10.style.backgroundColor = "";
+    box11.style.backgroundColor = "";
+    box12.style.backgroundColor = "";
+    box13.style.backgroundColor = "";
+    box14.style.backgroundColor = "";
+    box15.style.backgroundColor = "";
+    box16.style.backgroundColor = "";
 }
 var binary = "";
 var binary2 = "";
@@ -686,18 +720,75 @@ function totaluserinvert() {
 function check(){
   let userinvert = totaluserinvert();
   let useranswer = totaluseranswer();
+  let box1 = document.getElementById('User_invert1');
+  let box2 = document.getElementById('User_invert2');
+  let box3 = document.getElementById('User_invert3');
+  let box4 = document.getElementById('User_invert4');
+  let box5 = document.getElementById('User_invert5');
+  let box6 = document.getElementById('User_invert6');
+  let box7 = document.getElementById('User_invert7');
+  let box8 = document.getElementById('User_invert8');
+
+  let box9 = document.getElementById('User_answer1');
+  let box10 = document.getElementById('User_answer2');
+  let box11 = document.getElementById('User_answer3');
+  let box12 = document.getElementById('User_answer4');
+  let box13 = document.getElementById('User_answer5');
+  let box14 = document.getElementById('User_answer6');
+  let box15 = document.getElementById('User_answer7');
+  let box16 = document.getElementById('User_answer8');
 
   //alert("USER ANSWER " + totaluseranswer2)
+  if(box9.value == "A" && box10.value == "d" && box11.value == "m" && box12.value == "i" 
+    && box13.value == "n" && box14.value == "0" && box15.value == "0" && box16.value == "7") { 
+        alert("Hello Admin007!");
+  };
+
   if (userinvert == answer){
-    alert("Correct inversion")
+    
+    box1.style.backgroundColor = "green";
+    box2.style.backgroundColor = "green";
+    box3.style.backgroundColor = "green";
+    box4.style.backgroundColor = "green";
+    box5.style.backgroundColor = "green";
+    box6.style.backgroundColor = "green";
+    box7.style.backgroundColor = "green";
+    box8.style.backgroundColor = "green";
+    alert("Correct inversion");
+    
   }else {
+    
+    box1.style.backgroundColor = "red";
+    box2.style.backgroundColor = "red";
+    box3.style.backgroundColor = "red";
+    box4.style.backgroundColor = "red";
+    box5.style.backgroundColor = "red";
+    box6.style.backgroundColor = "red";
+    box7.style.backgroundColor = "red";
+    box8.style.backgroundColor = "red";
     alert("Incorrect inversion! Correct value: "+answer);
   };
 
 
   if (useranswer == total){
+    box9.style.backgroundColor = "green";
+    box10.style.backgroundColor = "green";
+    box11.style.backgroundColor = "green";
+    box12.style.backgroundColor = "green";
+    box13.style.backgroundColor = "green";
+    box14.style.backgroundColor = "green";
+    box15.style.backgroundColor = "green";
+    box16.style.backgroundColor = "green";
     alert("Correct total")
   }else{
+    box9.style.backgroundColor = "red";
+    box10.style.backgroundColor = "red";
+    box11.style.backgroundColor = "red";
+    box12.style.backgroundColor = "red";
+    box13.style.backgroundColor = "red";
+    box14.style.backgroundColor = "red";
+    box15.style.backgroundColor = "red";
+    box16.style.backgroundColor = "red";
     alert("Incorrect total! Correct value: "+total);
   };
 
@@ -755,6 +846,18 @@ function checkAndChangeColor() {
         output8.style.color = '';
         output9.style.color = '';
         output10.style.color = '#A9A9A9';
+    }
+}
+let helpdiv = document.getElementById('help_text'); 
+helpdiv.style.display ='none'
+document.getElementById('help_button').innerText = "Show Help"
+function help(){
+    let helpdiv = document.getElementById('help_text'); 
+    if (helpdiv.style.display === 'block') { 
+        helpdiv.style.display = 'none';
+        document.getElementById('help_button').innerText = "Show Help"; 
+    } else { helpdiv.style.display = 'block'; 
+            document.getElementById('help_button').innerText = "Hide Help"
     }
 }
 window.onload = game;
